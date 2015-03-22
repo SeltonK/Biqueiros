@@ -18,10 +18,10 @@ public class User extends Model{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	public long id;
+	public Long id;
 	
 	@Required
-	String nome;
+	public String nome;
 	@Required
 	String sobreNome;
 	@Required

@@ -22,8 +22,7 @@ public class UserCRUD extends Controller {
 
 
 			String userName = "guest";
-			return TODO;
-//			return ok(views.html.diretor.render(usuarios,userName));
+			return ok(views.html.user.render(usuarios,userName));
 
 		}
 		
@@ -40,13 +39,13 @@ public class UserCRUD extends Controller {
 
 		public static Result novoUsuario() {
 
-			return ok(views.html.novoUsuario.render(userForm));
+			return ok(views.html.cadastro.render(userForm));
 
 		}
 
-		public static Result detalhar(Long id) {
+	public static Result detalhar(Long id) {
 			Form<User> userForm = form(User.class).fill(User.find.byId(id));
-			return ok(views.html.alterarUsuario.render(id,userForm));
+			return TODO;
 		}
 
 		public static Result alterar(Long id) {
@@ -54,11 +53,11 @@ public class UserCRUD extends Controller {
 
 			Form<User> alterarForm = form(User.class).bindFromRequest();
 			if (alterarForm.hasErrors()) { 
-				return badRequest(views.html.alterarDiretor.render(id,alterarForm)); }
+				return TODO; }
 			alterarForm.get().update(id);
 			flash("sucesso","Diretor " + alterarForm.get().nome + " alterado com sucesso");
 
-			return redirect(routes.DiretorCRUD.lista());
+			return redirect(routes.UserCRUD.lista());
 
 		}
 
@@ -66,14 +65,13 @@ public class UserCRUD extends Controller {
 			Form<User> form = userForm.bindFromRequest();
 			if (form.hasErrors()) {
 				flash("erro","Foram identificados problemas no cadastro");
-				return badRequest(views.html.novoDiretor.render(userForm));
+				return badRequest(views.html.cadastro.render(userForm));
 			}
 			User user = form.get();
 			user.save();
 			// ou form.get().save();
 			flash("sucesso","Registro gravado com sucesso");
-
-			return redirect(routes.DiretorCRUD.lista());
+			return redirect(routes.UserCRUD.lista());
 
 		}
 
