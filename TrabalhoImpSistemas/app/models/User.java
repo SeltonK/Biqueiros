@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -23,17 +24,17 @@ public class User extends Model{
 	@Required
 	public String nome;
 	@Required
-	String sobreNome;
+	public String sobreNome;
 	@Required
-	String login;
+	public String login;
 	@Required
-	String senha;
+	public String senha;
 	@Required
-	String email;
+	public String email;
 	@Required
-	String dataNascimento;
+	public Date dataNascimento;
 	@Required
-	String cpf;
+	public String cpf;
 	
 	public static Model.Finder<Long,User> find = new Model.Finder<Long,User>(Long.class,User.class);
 	

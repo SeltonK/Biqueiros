@@ -13,7 +13,15 @@
 <div align="center">
 <fieldset>
 	@helper.form(action=routes.UserCRUD.gravar()){
-	@helper.inputText(userForm("nome"))
+	@helper.inputText(userForm("nome"),'placeholder -> "Nome",'_label -> null,'_showConstraints -> false)
+	@helper.inputDate(userForm("dataNascimento"),'placeholder -> "Data De Nascimento",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("sobreNome"),'placeholder -> "Sobrenome",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("cpf"),'placeholder -> "CPF",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("login"),'placeholder -> "Login",'_label -> null,'_showConstraints -> false)
+	@helper.inputPassword(userForm("senha"),'placeholder -> "Senha",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("email"),'placeholder -> "Email",'_label -> null,'_showConstraints -> false)
+
+	<button id="singlebutton" name="singlebutton">Gravar</button>
 	}
 </fieldset>
 </div>
