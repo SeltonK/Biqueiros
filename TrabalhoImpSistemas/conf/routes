@@ -4,12 +4,12 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /home                           controllers.Application.home()
-GET		/user/cadastrar						controllers.UserCRUD.novoUsuario()
-#GET	/usuario/mensagens						controllers.Application.mensagens()
-POST    /home                        controllers.Application.home()
-GET 	/user/							controllers.UserCRUD.gravar()
-GET 	/user							controllers.UserCRUD.lista()
+GET     /home                       controllers.Application.home()
+GET		/user/cadastrar				controllers.UserCRUD.novoUsuario()
+#GET	/usuario/mensagens			controllers.Application.mensagens()
+POST    /home                       controllers.Application.home()
+GET 	/user/						controllers.UserCRUD.gravar()
+GET 	/user						controllers.UserCRUD.lista()
 GET     /user/:id                   controllers.UserCRUD.detalhar(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
