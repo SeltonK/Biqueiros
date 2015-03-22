@@ -12,6 +12,8 @@ public class Application extends Controller {
     public static Result home() {
         return ok(views.html.home.render("Biqueiros"));
     }
-
+    public static Result cadastro() {
+        return ok(views.html.cadastro.render("Biqueiros"));
+    }
 
 }
