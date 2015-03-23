@@ -1,7 +1,5 @@
-@(message:String)
+@(message:String)(user:User)
 <html>
-
-<<<<<<< HEAD
 <head>
 <title>@message</title>
 	<link rel="stylesheet" href="@routes.Assets.at("stylesheets//home.css")"/>
@@ -15,7 +13,7 @@
                   <li class="name">
                     <h1>
                       <a href="#">
-                        Bem Vindo < usuario >
+                        Bem Vindo @user.nome
                       </a>
                     </h1>
                   </li>
@@ -146,8 +144,6 @@
       </div>
 
 </body>
-=======
 @message
->>>>>>> refs/heads/Controllers
 
 </html>
