@@ -21,7 +21,7 @@ public class Application extends Controller {
     	String senha = getData.get("senha")[0];
     	List<User> userdb;
     	
-    		userdb=User.find.where("t0.login= \""+ userName+"\"").findList();
+    		userdb = User.find.where("t0.login= \""+ userName+"\"").findList();
     		for(User user: userdb){
     			if (user.login.equals(userName) && user.senha.equals(senha)) {
     				return ok(views.html.home.render("Login realizado com sucesso",user));
@@ -29,6 +29,8 @@ public class Application extends Controller {
     		}
     		
     		return TODO;
+ 
+
 
 }
  }

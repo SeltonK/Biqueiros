@@ -53,7 +53,8 @@ public class UserCRUD extends Controller {
 
 			Form<User> alterarForm = form(User.class).bindFromRequest();
 			if (alterarForm.hasErrors()) { 
-				return TODO; }
+				return TODO;
+				}
 			alterarForm.get().update(id);
 			flash("sucesso","Diretor " + alterarForm.get().nome + " alterado com sucesso");
 
@@ -71,7 +72,7 @@ public class UserCRUD extends Controller {
 			user.save();
 			// ou form.get().save();
 			flash("sucesso","Registro gravado com sucesso");
-			return redirect(routes.UserCRUD.lista());
+			return redirect(routes.Application.index());
 
 		}
 
