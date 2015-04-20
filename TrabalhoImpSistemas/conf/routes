@@ -11,6 +11,7 @@ POST    /home                       controllers.Application.home()
 GET 	/user/						controllers.UserCRUD.gravar()
 GET 	/user						controllers.UserCRUD.lista()
 GET     /user/:id                   controllers.UserCRUD.detalhar(id: Long)
-
+GET		/projeto/cadastrar			controllers.ProjetoCRUD.novoProjeto()
+GET 	/projeto/					controllers.ProjetoCRUD.gravar()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -1,20 +1,19 @@
 package models;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
-@Entity
-public class User extends Model{
 
+@Entity
+public class Projeto extends Model {
+	
 	/**
 	 * 
 	 */
@@ -26,20 +25,13 @@ public class User extends Model{
 	@Required
 	public String nome;
 	@Required
-	public String sobreNome;
+	public String descricao;
 	@Required
-	public String login;
-	@Required
-	public String senha;
-	@Required
-	public String email;
-	@Required
-	public Date dataNascimento;
-	@Required
-	public String cpf;
-	@OneToMany
-	public List<Projeto> projetos;
-	public static Model.Finder<Long,User> find = new Model.Finder<Long,User>(Long.class,User.class);
+	public String tipo;
+	@ManyToOne
+	public User user;
+	
+public static Model.Finder<Long,Projeto> find = new Model.Finder<Long,Projeto>(Long.class,Projeto.class);
 	
 	public static Map<String,String> options() {
 		LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();

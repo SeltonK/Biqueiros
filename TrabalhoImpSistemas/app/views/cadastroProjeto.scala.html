@@ -1,0 +1,25 @@
+@(userForm: Form[Projeto])
+<html>
+<head>
+
+	<title></title>
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets//cadastro.css")"/>
+
+    <link rel="javascript" href="@routes.Assets.at("js/vendor/modernizr.js")" />
+
+</head>
+
+<body>
+<div align="center">
+<fieldset>
+	@helper.form(action=routes.ProjetoCRUD.gravar()){
+	@helper.inputText(userForm("nome"),'placeholder -> "Nome",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("descricao"),'placeholder -> "Descrição",'_label -> null,'_showConstraints -> false)
+	@helper.inputText(userForm("tipo"),'placeholder -> "Tipo",'_label -> null,'_showConstraints -> false)
+	<button id="singlebutton" name="singlebutton" class="button-primary">Gravar</button>
+	}
+</fieldset>
+</div>
+</body>
+
+</html>
