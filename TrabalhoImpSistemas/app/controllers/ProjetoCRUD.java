@@ -22,11 +22,12 @@ public class ProjetoCRUD extends Controller {
 
 		public static Result lista(Long id) {
 
-			List<Projeto> usuarios = User.find.ref(id).projetos;
+			List<Projeto> projetos = User.find.ref(id).projetos;
+			
+			User user = User.find.ref(id);
 
-
-			String userName = "guest";
-			return ok(views.html.projeto.render(usuarios,userName));
+			
+			return ok(views.html.projeto.render(projetos,user.nome));
 
 		}
 		

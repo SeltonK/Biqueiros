@@ -1,4 +1,4 @@
-@(user:User)
+@(projetos:List[Projeto], user:User)
 <html>
 <head>
 <title>Home</title>
@@ -61,7 +61,7 @@
      
          
      
-     @for(projeto <- user.projetos) {
+     @for(projeto <- projetos) {
 	        <div class="large-8 columns">
               <div class="row">
      
@@ -69,7 +69,8 @@
                   <h1>@projeto.descricao</h1>
      
                   <div class="panel">
-                    <h5>@projeto.nome</h5>
+                  	<a href="@routes.ProjetoCRUD.lista(projeto.user.id)">@projeto.user.nome</a>
+                    <p>@projeto.nome</p>
                   </div>
                 </div>
 	          }

@@ -4,6 +4,7 @@ package controllers;
 import java.util.List;
 import java.util.Map;
 
+import models.Projeto;
 import models.User;
 import play.Logger;
 import play.data.Form;
@@ -22,25 +23,28 @@ public class Application extends Controller {
     	List<User> userdb;
     	String userName;
     	String senha;
+    	List<Projeto> projetos =  Projeto.find.all();
     	Logger.info(session("id"));
     	if(session().containsKey("connected")){
     		userName = session("connected");
-    		userdb = User.find.where("t0.login= \""+ userName+"\"").findList();
+    		userdb = User.find.where("t0.nome= \""+ userName+"\"").findList();
     		for(User user: userdb){
-    		return ok(views.html.home.render(user));
+    		return ok(views.html.home.render(projetos,user));
     		}
     	}
     	userName = getData.get("login")[0];
     	senha = getData.get("senha")[0];
     	
     	
+    	
+    	
     		userdb = User.find.where("t0.login= \""+ userName+"\"").findList();
     		for(User user: userdb){
     			if (user.login.equals(userName) && user.senha.equals(senha)) {
-    				session("connected",user.login);
+    				session("connected",user.nome);
     				session("id",user.id.toString());
     				Logger.info(session("id"));
-    				return ok(views.html.home.render(user));
+    				return ok(views.html.home.render(projetos,user));
 				}
     		}
     		
