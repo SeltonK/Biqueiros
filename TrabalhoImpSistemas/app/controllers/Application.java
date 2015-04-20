@@ -1,8 +1,10 @@
 
 package controllers;
 
+import java.util.List;
 import java.util.Map;
 
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -17,15 +19,16 @@ public class Application extends Controller {
     	Map<String, String[]> getData=request().body().asFormUrlEncoded();
     	String userName = getData.get("login")[0];
     	String senha = getData.get("senha")[0];
+    	List<User> userdb;
     	
-    	if (userName.equals("Binho") && senha.equals("123")) {
-    		return ok(views.html.home.render("Voce Logou"));
-			
-		}else{
-    	
-    	
-        return ok(views.html.home.render("Voce se fudeu"));
-        }
-    }
+    		userdb=User.find.where("t0.login= \""+ userName+"\"").findList();
+    		for(User user: userdb){
+    			if (user.login.equals(userName) && user.senha.equals(senha)) {
+    				return ok(views.html.home.render("Login realizado com sucesso",user));
+				}
+    		}
+    		
+    		return TODO;
 
 }
+ }
