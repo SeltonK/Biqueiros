@@ -1,0 +1,27 @@
+@(projetos: List[Projeto])(usuario: String)
+<html>
+<head><script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.3.js")"></script></head>
+<body>
+	
+    <div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+	      <li class="active"><a href="@routes.ProjetoCRUD.novoProjeto()">Novo Projeto</a></li>
+          <li class="active"><a href="/home">Home</a></li>
+        </ul>
+        <h2 class="text-muted">Bem-vindo  @usuario ! </h2>
+        <h3 class="text-muted">Projetos </h3>
+      </div>
+     <table class="table table-striped table-bordered" id="example" cellpadding="0" cellspacing="0" border="0" width="100%">
+	    <tfoot>
+	      @for(projeto <- projetos) {
+	        <tr>
+	            <th><a href="@routes.ProjetoCRUD.detalhar(projeto.id)">@projeto.nome</a></th>
+	        </tr>
+	             }
+	    </tfoot>
+	   </table>
+      </div>
+
+</body>
+</html>

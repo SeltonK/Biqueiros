@@ -1,0 +1,43 @@
+@(id: Long, diretorForm: Form[Projeto])
+
+@import helper._
+
+<html>
+<head><script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.3.js")"></script></head>
+<body>
+
+   <div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/home">Home</a></li>
+        </ul>
+      </div>
+
+    <h1>Alterar diretor</h1>
+
+    @form(routes.ProjetoCRUD.alterar(id)) {
+
+     <fieldset>@inputText(diretorForm("nome"), '_label -> "Nome do Projeto")</fieldset>
+     <fieldset>@inputText(diretorForm("descricao"), '_label -> "Descricao Do Projeto")</fieldset>
+     <fieldset>@inputText(diretorForm("tipo"), '_label -> "Tipo")</fieldset>
+
+      <div class="control-group">
+        <div class="actions">
+
+            <input type="submit" value="Gravar" class="btn btn-primary">
+
+            <a href="@routes.ProjetoCRUD.lista(session.get("id").toLong)" class="btn btn-primary ">Cancelar</a>
+
+    }
+
+    @form(routes.ProjetoCRUD.remover(id)) {
+            <input type="submit" value="Remover esse diretor" class="btn danger">
+    }
+
+        </div>
+      </div>
+
+</div>
+
+</body>
+</html>

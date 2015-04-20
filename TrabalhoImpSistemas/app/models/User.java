@@ -39,6 +39,8 @@ public class User extends Model{
 	public String cpf;
 	@OneToMany
 	public List<Projeto> projetos;
+	
+	
 	public static Model.Finder<Long,User> find = new Model.Finder<Long,User>(Long.class,User.class);
 	
 	public static Map<String,String> options() {

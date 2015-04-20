@@ -1,7 +1,7 @@
-@(message:String)(user:User)
+@(user:User)
 <html>
 <head>
-<title>@message</title>
+<title>Home</title>
 	<link rel="stylesheet" href="@routes.Assets.at("stylesheets//home.css")"/>
 
     <link rel="javascript" href="@routes.Assets.at("js/vendor/modernizr.js")" />
@@ -24,7 +24,7 @@
                    
                   <ul class="right">
                   <li class="divider"></li>
-                  <li><a href="/meusprojetos">Meus Projetos</a></li>
+                  <li><a href="@routes.ProjetoCRUD.lista(session.get("id").toLong)">Meus Projetos</a></li>
                   <li class="divider"></li>
                   <li><a href="/mensagens">Mensagens</a></li>
                   
@@ -61,68 +61,20 @@
      
          
      
-     
-         	
-            <div class="large-8 columns">
+     @for(projeto <- user.projetos) {
+	        <div class="large-8 columns">
               <div class="row">
      
                 <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
+                  <h1>@projeto.descricao</h1>
      
                   <div class="panel">
-                    <h5>Projeto 1</h5>
+                    <h5>@projeto.nome</h5>
                   </div>
                 </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Projeto 2</h5>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Projeto 3</h5>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Projeto 4</h5>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Projeto 5</h5>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Projeto 6</h5>
-                  </div>
-                </div>
-              </div>
-
-         
-     
-     
-         
-              
-     
-     
-         
+	          }
+         	
+   
      
           <footer class="row">
             <div class="large-12 columns"><hr/>
@@ -144,6 +96,4 @@
       </div>
 
 </body>
-@message
-
 </html>
