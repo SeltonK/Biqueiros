@@ -3,41 +3,48 @@
 @import helper._
 
 <html>
-<head><script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.3.js")"></script></head>
+<head>
+<link rel="stylesheet" href="@routes.Assets.at("stylesheets//foundation.css")"/>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.3.js")"></script>
+</head>
 <body>
-
-   <div class="container">
-    <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/home">Home</a></li>
-        </ul>
-      </div>
-
-    <h1>Alterar diretor</h1>
-
+<nav class="top-bar" data-topbar>
+<ul class="title-area">
+                   
+                  <li class="name">
+                    <h1>
+                      <a href="#">
+                        Editar projetos
+                      </a>
+                    </h1>
+                  </li>
+                </ul>
+<ul class="button-group">
+<li class="divider"></li>
+<li class="name">
+<h1>
+<a href="/home">
+Voltar
+</a>
+</h1>
+</li>
+</ul>
+</nav>
+<fieldset>
     @form(routes.ProjetoCRUD.alterar(id)) {
 
-     <fieldset>@inputText(diretorForm("nome"), '_label -> "Nome do Projeto")</fieldset>
-     <fieldset>@inputText(diretorForm("descricao"), '_label -> "Descricao Do Projeto")</fieldset>
-     <fieldset>@inputText(diretorForm("tipo"), '_label -> "Tipo")</fieldset>
-
-      <div class="control-group">
-        <div class="actions">
-
-            <input type="submit" value="Gravar" class="btn btn-primary">
-
-            <a href="@routes.ProjetoCRUD.lista(session.get("id").toLong)" class="btn btn-primary ">Cancelar</a>
-
-    }
-
+    @inputText(diretorForm("Nome"))
+    @inputText(diretorForm("Descricao"))
+    @inputText(diretorForm("Tipo"))
+           <input type="submit" value="Gravar" class="btn btn-primary">
     @form(routes.ProjetoCRUD.remover(id)) {
-            <input type="submit" value="Remover esse diretor" class="btn danger">
+            <input type="submit" value="Excluir" class="btn danger">
+    }
+     </fieldset> 
+     
+
     }
 
-        </div>
-      </div>
-
-</div>
-
+    
 </body>
 </html>

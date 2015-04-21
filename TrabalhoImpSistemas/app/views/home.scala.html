@@ -42,54 +42,30 @@
          
      
           <div class="row">
+            <div class="large-4 small-14 columns">
+            <div class="panel">
      
-       
-     
-            <div class="large-4 small-12 columns">
-     
-              <img src="http://placehold.it/500x500&text=Logo">
-     
-              <div class="hide-for-small panel">
-                <h3>@user.nome</h3>
-                <h5 class="subheader">Java, C++, Python
-                </h5>
-              </div>
+              <img src="http://crgaivota.com.br/imagens/meio/galeria-de-presidentes/usuario-sem-imagem.png">
      
               
-     
+                <h3>@user.nome</h3>
+            </div>
+
             </div>
      
-         
-     
+     <div class="panel">
+     <h3 align="center"> Projetos </h3>
      @for(projeto <- projetos) {
-	        <div class="large-8 columns">
+     
+	        
               <div class="row">
-     
                 <div class="large-4 small-6 columns">
-                  <h1>@projeto.descricao</h1>
-     
-                  <div class="panel">
-                  	<a href="@routes.ProjetoCRUD.lista(projeto.user.id)">@projeto.user.nome</a>
-                    <p>@projeto.nome</p>
-                  </div>
-                </div>
+                    <p><b>@projeto.nome</b></p>
+                    <p><i>@projeto.descricao</i></p>
+                
 	          }
          	
-   
-     
-          <footer class="row">
-            <div class="large-12 columns"><hr/>
-              <div class="row"><br>
-     
-                <div class="large-6 columns">
-                  <p>© Copyright todos os direitos reservados. IFCE.</p>
-                </div>
-     
-                
-     
-              </div>
-            </div>
-          </footer>
+   </div>
      
          
      

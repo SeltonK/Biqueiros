@@ -927,6 +927,7 @@ select {
     width: 58.33333%; }
 
   .large-8 {
+    background: #808080;
     width: 66.66667%; }
 
   .large-9 {
@@ -1714,6 +1715,7 @@ meta.foundation-mq-topbar {
 
 .top-bar {
   overflow: hidden;
+  
   height: 2.8125rem;
   line-height: 2.8125rem;
   position: relative;
@@ -2005,7 +2007,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #33C3F0;
+    background: #262626;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
       content: " ";
@@ -2056,7 +2058,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 0.9375rem;
       line-height: 2.8125rem;
-      background: #33C3F0; }
+      background: #262626; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #555555;
         background: #333333; }
@@ -3688,8 +3690,9 @@ h6 {
   margin-bottom: 0.5rem; }
 
 hr {
-  border: solid #DDDDDD;
+  border: solid #000000;
   border-width: 1px 0 0;
+  width: 500;
   clear: both;
   margin: 1.25rem 0 1.1875rem;
   height: 0; }

@@ -1481,9 +1481,8 @@ input[type="file"] {
 /* HTML5 Number spinners settings */
 /* We add basic fieldset styling */
 fieldset {
-  border: 3px solid #33C3F0;
-  width: 500;
-  padding: 1.25rem;
+  border: 3px solid #DDDDDD;
+  width: 400;
   margin: 1.125rem 0; }
   fieldset legend {
     font-weight: bold;
